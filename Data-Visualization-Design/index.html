@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Προσθήκη CDN Chart.js -->
+</head>
+<body class="light">
+  <header class="header">
+    <h1>Dashboard</h1>
+    <label class="switch">
+      <input type="checkbox" id="theme-toggle">
+      <span class="slider"></span>
+    </label>
+  </header>
+
+  <main class="dashboard">
+    <section class="stats">
+      <div class="card">
+        <h2>Users</h2>
+        <p>1,245</p>
+      </div>
+      <div class="card">
+        <h2>Sessions</h2>
+        <p>542</p>
+      </div>
+      <div class="card">
+        <h2>Revenue</h2>
+        <p>$12,345</p>
+      </div>
+      <div class="card">
+        <h2>Growth</h2>
+        <p>25%</p>
+      </div>
+    </section>
+
+    <section class="charts">
+      <div class="chart pie-chart">
+        <h3>User Distribution</h3>
+        <canvas id="pieChartCanvas"></canvas> <!-- Χρησιμοποιούμε canvas αντί για div -->
+      </div>
+      <div class="chart bar-chart">
+        <h3>Monthly Revenue</h3>
+        <canvas id="barChartCanvas"></canvas> <!-- Χρησιμοποιούμε canvas αντί για div -->
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

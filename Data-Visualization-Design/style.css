@@ -1,0 +1,199 @@
+/* Γενικές ρυθμίσεις */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 16px; /* Καθορίζουμε το βασικό μέγεθος γραμματοσειράς για καλύτερη αναγνωσιμότητα */
+    line-height: 1.5; /* Βελτίωση απόστασης γραμμών */
+}
+
+body.light {
+    background-color: #f8f9fc;
+    color: #333; /* Μαύρο ή σκούρο χρώμα για το light mode */
+}
+
+body.dark {
+    background-color: #1c1e29;
+    color: #eaeaea; /* Λευκό κείμενο για το dark mode */
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: inherit;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: none; /* Αφαίρεση σκιάς στο header */
+}
+
+h1 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 1.5rem; /* Μεγαλύτερο μέγεθος για το h1 */
+}
+
+body.dark h1 {
+    color: #fff; /* Λευκά γράμματα για το h1 στο dark mode */
+}
+
+/* Switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #cfd8dc;
+    transition: 0.4s;
+    border-radius: 30px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 5px;
+    bottom: 5px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: #00bcd4;
+}
+
+input:checked + .slider:before {
+    transform: translateX(30px);
+}
+
+/* Dashboard */
+.dashboard {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+body.dark .dashboard {
+    color: #eaeaea; /* Λευκά γράμματα για το dashboard στο dark mode */
+}
+
+/* Stats Section */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+/* Κάρτες (users, sessions, revenue, growth) */
+.card {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s;
+}
+
+body.dark .card {
+    background-color: #27293d;
+    border-color: #444;
+    box-shadow: none; /* Αφαίρεση σκιάς στις κάρτες στο dark mode */
+    color: #eaeaea; /* Λευκά γράμματα για τις κάρτες στο dark mode */
+}
+
+/* Στο hover για την κίνηση των καρτών */
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Χρώματα για User Distribution, Revenue, Growth, Sessions */
+.card .user-distribution {
+    color: #00bcd4; /* Light blue */
+}
+
+.card .user-distribution:hover {
+    color: #2196f3; /* Blue */
+}
+
+.card .revenue {
+    color: #ff4081; /* Pink */
+}
+
+.card .growth {
+    color: #8bc34a; /* Green */
+}
+
+.card .sessions {
+    color: #ffeb3b; /* Yellow */
+}
+
+/* Στο dark mode, τα χρώματα στις κάρτες αλλάζουν σε λευκό */
+body.dark .card .user-distribution,
+body.dark .card .revenue,
+body.dark .card .growth,
+body.dark .card .sessions {
+    color: #fff; /* Λευκό κείμενο για όλα τα στοιχεία στο dark mode */
+}
+
+/* Νέες Κάρτες για Growth και Sessions */
+.card .growth {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.card .sessions {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+/* Charts Section */
+.charts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.chart {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+body.dark .chart {
+    background-color: #27293d;
+    color: #eaeaea; /* Λευκά γράμματα για το chart στο dark mode */
+    box-shadow: none; /* Αφαίρεση σκιάς στα γραφήματα */
+}
+
+/* Αφαίρεση σκιάς από τα γραφήματα */
+body.dark .pie-chart canvas,
+body.dark .bar-chart canvas {
+    box-shadow: none; /* Αφαίρεση σκιάς από τα γραφήματα */
+}
+
+/* Λευκό Χρώμα για το "Revenue" στο Dark Mode */
+body.dark .revenue {
+    color: #fff; /* Λευκό κείμενο για το "Revenue" στο dark mode */
+}
